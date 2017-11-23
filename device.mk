@@ -62,3 +62,8 @@ PRODUCT_PACKAGES += \
    # device/asus/Z010D/Z010DD/etc/prima/WCNSS_qcom_wlan_nv.bin:install/bin/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
     #device/asus/Z010D/Z010DD/etc/wifi/WCNSS_qcom_cfg.ini:install/bin/etc/wifi/WCNSS_qcom_cfg.ini
 
+# OTA
+PRODUCT_PROPERTY_OVERRIDES += \
+        ro.ota.romname=AIM-ROM \
+        ro.ota.version=$(shell date +"%Y%m%d") \
+        ro.ota.manifest=https://raw.githubusercontent.com/AIMROM/OFFICIAL_DEVICES/O/Z010D.xml
