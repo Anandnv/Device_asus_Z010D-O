@@ -37,11 +37,13 @@
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
+#include <android-base/logging.h>
 #include <android-base/properties.h>
 #include "vendor_init.h"
 #include "property_service.h"
 
 using android::base::GetProperty;
+using android::init::property_set;
 
 #define RAW_ID_PATH     "/sys/devices/soc0/raw_id"
 #define BUF_SIZE         64
