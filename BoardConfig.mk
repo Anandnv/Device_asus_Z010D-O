@@ -36,5 +36,8 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_msm8916
 # Use Snapdragon LLVM, if available		
 TARGET_USE_SDCLANG := true
 
+#Android go flag
+TARGET_HAS_LOW_RAM := true
+
 # inherit from the proprietary version
 -include vendor/asus/Z010D/BoardConfigVendor.mk

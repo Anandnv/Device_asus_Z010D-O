@@ -67,3 +67,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
         ro.ota.romname=AIM-ROM \
         ro.ota.version=$(shell date +"%Y%m%d") \
         ro.ota.manifest=https://raw.githubusercontent.com/AIMROM/OFFICIAL_DEVICES/O/Z010D.xml
+
+
+# ADB
+ ADDITIONAL_DEFAULT_PROPERTIES += \
+  ro.secure=0 \
+  ro.allow.mock.location=1 \
+  ro.debuggable=1 \
+  ro.adb.secure=0 \
+  ro.oem_unlock_supported=1
