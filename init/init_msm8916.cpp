@@ -118,9 +118,16 @@ void property_override(char const prop[], char const value[])
         __system_property_add(prop, strlen(prop), value, strlen(value));
 }
 
+void property_override_dual(char const system_prop[], char const vendor_prop[], char const value[])
+ {
+     property_override(system_prop, value);
+     property_override(vendor_prop, value);
+ }
+
 void vendor_load_properties()
 {
 
+    char b_description[PROP_VALUE_MAX], b_fingerprint[PROP_VALUE_MAX];
     char p_device[PROP_VALUE_MAX];
     unsigned long raw_id = -1;
     int rc;
@@ -140,8 +147,9 @@ void vendor_load_properties()
 
     sprintf(p_device, "ASUS_%s", device);
 
-    property_override("ro.product.device", p_device);
+    property_override_dual("ro.product.device", "ro.vendor.product.model", p_device);
     property_override("ro.product.model", "ASUS_Z010D");
+    property_override("ro.vendor.product.device", "Z010D");
     property_override("ro.build.product", "ZC550KL");
 
     /* Heap Set */
